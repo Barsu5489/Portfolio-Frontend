@@ -40,6 +40,7 @@ const [userId, setUserId] = useState(null)
       localStorage.setItem('userLastName', info.data.user.last_name)
 
       redirect('/')
+      window.location.reload();
     }).catch(error=>{
       console.log(error.message)
       console.log(error.response);
@@ -62,7 +63,7 @@ const [userId, setUserId] = useState(null)
         </div>
         <button type="submit" className="btn btn-primary">Log In</button>
         <div className="forgot-password">
-        <span><p>Don't have an account?</p></span> <p> <span onClick={()=>redirect('/signup')}>Create!</span></p>
+        <span><p>Don't have an account?</p></span> <p className='link'> <span onClick={()=>redirect('/signup')}>Create!</span></p>
     </div>
         <p style={{color:'red'}}>{error}</p>
         

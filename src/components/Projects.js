@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 function Projects() {
+  const redirect = useNavigate() 
   const userId = localStorage.getItem('userId');
   console.log(userId)
   const [projects, setProject] = useState([])
@@ -98,7 +100,9 @@ handleEdit(project.id)} className="project__button project__button--edit">Edit</
   return (
     <>
       <div className="project-page">
-        <h1 className="project-page__title">My Projects  <span><button>Add project</button></span></h1>
+        <h1 className="project-page__title">My Projects  <span><button className='addProject'
+        onClick={()=>redirect('/addProject')}
+        >Add project</button></span></h1>
 
   
 

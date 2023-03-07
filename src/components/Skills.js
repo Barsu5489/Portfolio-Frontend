@@ -32,8 +32,8 @@ useEffect(() => {
 
 function handleAddNewSkill(e){
   e.preventDefault()
-  if(skills.length >=10){
-    alert('no more')
+  if(skills.length >9){
+    alert('Skills Limit reached' )
   }
   const formData = new FormData(e.target);
 fetch(`https://port-folio-xtgn.onrender.com/skills/${userId}`,{
