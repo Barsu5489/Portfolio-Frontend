@@ -26,7 +26,7 @@ const [error, setError] = useState('')
         throw new Error('Invalid email or Password')
       }
     }).then((info)=>{
-      setUserId(info.data.user.id)
+     
       localStorage.setItem('userId', info.data.user.id)
       localStorage.setItem('userInfo', info.data.user.first_name)
       localStorage.setItem('userLastName', info.data.user.last_name)
