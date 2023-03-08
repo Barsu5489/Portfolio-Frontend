@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 function Projects() {
   const redirect = useNavigate() 
   const userId = localStorage.getItem('userId');
-  console.log(userId)
   const [projects, setProject] = useState([])
   const [editingId, setEditingId] = useState(null);
   const [editingTitle, setEditingTitle] = useState('');
@@ -24,9 +23,9 @@ function Projects() {
   }
 
   function handleEdit(id) {
-    setEditingId(id);
-    setEditingTitle(projects.find(project => project.id === id).title);
-    setEditingDescription(projects.find(project => project.id === id).description);
+      setEditingId(id);
+      setEditingTitle(projects.find(project => project.id === id).title);
+      setEditingDescription(projects.find(project => project.id === id).description);
   }
 
   function handleSave(id, title, description) {
@@ -70,7 +69,7 @@ function Projects() {
           )}
           <p className="project__date">{timeString}</p>
         </div>
-        <img src={project.image_url} alt="missing" srcSet="" />
+        <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDV8fHBvcnRmb2xpb3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="missing" srcSet="" className='projectImg'/>
         {editingId === project.id ? (
           <textarea className="project__description" value={editingDescription} onChange={(e) => setEditingDescription(e.target.value)}></textarea>
         ) : (
@@ -79,8 +78,8 @@ function Projects() {
         <div className="project__footer">
           <ul className="project__skills">
             <li className="project__skill"><a href={project.repo_url}>{project.repo_url}</a></li>
-            <li className="project__skill">Skill 2</li>
-            <li className="project__skill">Skill 3</li>
+            <li className="project__skill">work</li>
+            <li className="project__skill">focus</li>
           </ul>
           <div className="project__buttons">
             {editingId === project.id ? (
